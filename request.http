@@ -1,0 +1,127 @@
+###
+GET http://localhost:3000/players
+###
+POST http://localhost:3000/register
+Content-Type: application/json
+{
+    "pseudo": "test",
+    "email": "test@test.com",
+    "password": "Azerty12345!"
+}
+###
+GET http://localhost:4000/users/1
+###
+GET http://localhost:4000/users/068db4a0-2e50-4c87-bef1-35970f14ceb4
+###
+PUT http://localhost:4000/users/068db4a0-2e50-4c87-bef1-35970f14ceb4
+Content-Type: application/json
+
+{
+    "lastname": "Smith",
+    "email": "smith@test.com",
+    "password": "Azerty12345!"
+}
+###
+PUT http://localhost:4000/users/c2da83f0-e134-4418-9d1a-d86f239723f4
+Content-Type: application/json
+
+{
+    "lastname": "Smith",
+    "email": "smith3@test.com",
+    "password": "Azerty12345!"
+}
+###
+DELETE http://localhost:4000/users/c2da83f0-e134-4418-9d1a-d86f239723f4
+###
+DELETE http://localhost:4000/users/c2da83f0
+###
+PATCH http://localhost:4000/users/ff23059d-8b01-47bf-b018-a3dedff18f0
+Content-Type: application/json
+
+{
+    "password": "Couc123ou!"
+}
+
+
+###
+GET http://localhost:4000/products
+###
+POST http://localhost:4000/products
+Content-Type: application/json
+
+{
+    "name": "Doe",
+    "sku": "test2@test.com"
+}
+###
+GET http://localhost:4000/products/1
+###
+GET http://localhost:4000/products/636b4a44-b85a-4f96-b5b2-ebbb84f72842
+###
+PUT http://localhost:4000/products/636b4a44-b85a-4f96-b5b2-ebbb84f72842
+Content-Type: application/json
+
+{
+    "name": "plystation 3",
+    "sku": "X3FDSF"
+}
+###
+PUT http://localhost:4000/products/c2da83f0-e134-4418-9d1a-d86f239723f4
+Content-Type: application/json
+
+{
+    "lastname": "Smith",
+    "email": "smith3@test.com",
+    "password": "Azerty12345!"
+}
+###
+DELETE http://localhost:4000/products/636b4a44-b85a-4f96-b5b2-ebbb84f72842
+###
+DELETE http://localhost:4000/products/c2da83f0
+###
+PATCH http://localhost:4000/products/636b4a44-b85a-4f96-b5b2-ebbb84f72842
+Content-Type: application/json
+
+{
+    "name": "xboax 360"
+}
+
+###
+PUT http://localhost:4000/users/ba8eab10-609a-4694-a4da-1a1c10753932
+Content-Type: application/json
+
+{
+    "lastname": "Smith",
+    "email": "DEZCFERVFERvdvedfvfe32435R34@test.com",
+    "password": "Azerty12345!"
+}
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "email": "DEZCFERVFERvdvedfvfe32435R34@test.com",
+    "password": "Azerty12345!"
+}
+### GET users list not connected
+GET http://localhost:4000/users
+### GET users list connected (invalid type)
+GET http://localhost:4000/users
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmZjIzMDU5ZC04YjAxLTQ3YmYtYjAxOC1hM2RlZGZmMThmMGUiLCJmdWxsTmFtZSI6IkRvZSBDb3VjMTIzb3UhIiwiaWF0IjoxNzExMTE4NjU2fQ.RSjGR55nTt3nR2wqiMtPbW86aLFM7v0ND5y2K2u-s8I
+### GET users list connected (invalid token)
+GET http://localhost:4000/users
+Authorization: Bearer eyJhbGciOifezferferJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmZjIzMDU5ZC04YjAxLTQ3YmYtYjAxOC1hM2RlZGZmMThmMGUiLCJmdWxsTmFtZSI6IkRvZSBDb3VjMTIzb3UhIiwiaWF0IjoxNzExMTE4NjU2fQ.RSjGR55nTt3nR2wqiMtPbW86aLFM7v0ND5y2K2u-s8I
+### GET users list connected (Forbidden: user is not admin) (update token from login)
+GET http://localhost:4000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiYThlYWIxMC02MDlhLTQ2OTQtYTRkYS0xYTFjMTA3NTM5MzIiLCJmdWxsTmFtZSI6IlNtaXRoIG51bGwiLCJpYXQiOjE3MTExMTk4NzZ9.cXzaPQYQYeYQ2mMZGOSnNT_qG4KU2vE5dqZM324ZsAU
+### PATCH user role to admin (update token from login)
+PATCH http://localhost:4000/users/ba8eab10-609a-4694-a4da-1a1c10753932
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiYThlYWIxMC02MDlhLTQ2OTQtYTRkYS0xYTFjMTA3NTM5MzIiLCJmdWxsTmFtZSI6IlNtaXRoIG51bGwiLCJpYXQiOjE3MTExMTk4NzZ9.cXzaPQYQYeYQ2mMZGOSnNT_qG4KU2vE5dqZM324ZsAU
+
+{
+    "role": "admin"
+}
+### GET users list connected (update token from login)
+GET http://localhost:4000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiYThlYWIxMC02MDlhLTQ2OTQtYTRkYS0xYTFjMTA3NTM5MzIiLCJmdWxsTmFtZSI6IlNtaXRoIG51bGwiLCJpYXQiOjE3MTExMTk4NzZ9.cXzaPQYQYeYQ2mMZGOSnNT_qG4KU2vE5dqZM324ZsAU

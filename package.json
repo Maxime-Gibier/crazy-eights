@@ -1,0 +1,22 @@
+{
+	"name": "MorpionAPI",
+	"version": "1.0.0",
+	"description": "Projet scolaire création d'une API pour un jeu au tour par tour",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon server.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^5.1.1",
+		"bcryptjs": "^2.4.3",
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2",
+		"jsonwebtoken": "^9.0.2",
+		"nodemon": "^3.1.2",
+		"pg": "^8.11.5",
+		"sequelize": "^6.37.3",
+	}
+}

@@ -1,0 +1,27 @@
+services:
+  server:
+    image: node:alpine
+    volumes:
+      - ./server:/home/node/app
+    working_dir: /home/node/app
+    ports:
+      - 127.0.0.1:3000:3000
+    environment:
+      PORT: 3000
+      DATABASE_URL: postgres://user:password@database:5432/database
+    #command: sh -c "npm install && npm run dev:windows"
+    command: sh -c "npm install && npm run dev"
+
+  database:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data-wsf:/var/lib/postgresql/data
+
+volumes:
+  db-data-wsf:
