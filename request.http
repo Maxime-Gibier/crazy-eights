@@ -1,127 +1,82 @@
 ###
-GET http://localhost:3000/players
-###
-POST http://localhost:3000/register
+GET http://localhost:3000/register
 Content-Type: application/json
 {
-    "pseudo": "test",
+    "pseudo": "pseudo",
+    "email": "fake@email.com",
+    "password": "Azerty12345!"
+}
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+{
     "email": "test@test.com",
     "password": "Azerty12345!"
 }
-###
-GET http://localhost:4000/users/1
-###
-GET http://localhost:4000/users/068db4a0-2e50-4c87-bef1-35970f14ceb4
-###
-PUT http://localhost:4000/users/068db4a0-2e50-4c87-bef1-35970f14ceb4
-Content-Type: application/json
 
-{
-    "lastname": "Smith",
-    "email": "smith@test.com",
-    "password": "Azerty12345!"
-}
 ###
-PUT http://localhost:4000/users/c2da83f0-e134-4418-9d1a-d86f239723f4
+GET http://localhost:3000/players
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6IjM2YTk5NTM5LWVkNWYtNDBmNi1hZjgzLTBjZDhkYzMyMWY2ZSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzAxMjgzOX0.VEWqjdwq_1_sKmXYc8xMwee4jD3UO-nRKEkOwf0sObQ
 
-{
-    "lastname": "Smith",
-    "email": "smith3@test.com",
-    "password": "Azerty12345!"
-}
 ###
-DELETE http://localhost:4000/users/c2da83f0-e134-4418-9d1a-d86f239723f4
-###
-DELETE http://localhost:4000/users/c2da83f0
-###
-PATCH http://localhost:4000/users/ff23059d-8b01-47bf-b018-a3dedff18f0
+GET http://localhost:3000/players/46e89b9d-8cc6-4962-b290-e6d0b1ae61a0
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6IjM2YTk5NTM5LWVkNWYtNDBmNi1hZjgzLTBjZDhkYzMyMWY2ZSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzAxMjgzOX0.VEWqjdwq_1_sKmXYc8xMwee4jD3UO-nRKEkOwf0sObQ
 
+###
+PATCH http://loacalhost:3000/players/46e89b9d-8cc6-4962-b290-e6d0b1ae61a0
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6IjM2YTk5NTM5LWVkNWYtNDBmNi1hZjgzLTBjZDhkYzMyMWY2ZSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzAxMjgzOX0.VEWqjdwq_1_sKmXYc8xMwee4jD3UO-nRKEkOwf0sObQ
 {
-    "password": "Couc123ou!"
+    "email": "random@icloud.com",
+    "pseudo": "test"
 }
 
-
-###
-GET http://localhost:4000/products
-###
-POST http://localhost:4000/products
+DELETE http://localhost:3000/players/bc4a2910-1a9d-4723-b3da-4fc00667e137
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6IjM2YTk5NTM5LWVkNWYtNDBmNi1hZjgzLTBjZDhkYzMyMWY2ZSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzAxMjgzOX0.VEWqjdwq_1_sKmXYc8xMwee4jD3UO-nRKEkOwf0sObQ
 
-{
-    "name": "Doe",
-    "sku": "test2@test.com"
-}
-###
-GET http://localhost:4000/products/1
-###
-GET http://localhost:4000/products/636b4a44-b85a-4f96-b5b2-ebbb84f72842
-###
-PUT http://localhost:4000/products/636b4a44-b85a-4f96-b5b2-ebbb84f72842
+
+POST http://localhost:3000/game/host
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6ImU5NmRkNDIwLWIwOWItNDNkMi1hZjRkLWQ3MmFhYjM0M2E0OSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzMxOTY3MX0.lAIH6crEUOsNoVvtrUbbtWsNd0CEHsLmKWOGtfwD2AY
 {
-    "name": "plystation 3",
-    "sku": "X3FDSF"
-}
-###
-PUT http://localhost:4000/products/c2da83f0-e134-4418-9d1a-d86f239723f4
-Content-Type: application/json
-
-{
-    "lastname": "Smith",
-    "email": "smith3@test.com",
-    "password": "Azerty12345!"
-}
-###
-DELETE http://localhost:4000/products/636b4a44-b85a-4f96-b5b2-ebbb84f72842
-###
-DELETE http://localhost:4000/products/c2da83f0
-###
-PATCH http://localhost:4000/products/636b4a44-b85a-4f96-b5b2-ebbb84f72842
-Content-Type: application/json
-
-{
-    "name": "xboax 360"
+    "player": {
+        "id": "af9141e8-0efb-4119-b4b8-e365c6a432aa"
+    }
 }
 
-###
-PUT http://localhost:4000/users/ba8eab10-609a-4694-a4da-1a1c10753932
+POST http://localhost:3000/game/host
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6ImU5NmRkNDIwLWIwOWItNDNkMi1hZjRkLWQ3MmFhYjM0M2E0OSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzMxOTY3MX0.lAIH6crEUOsNoVvtrUbbtWsNd0CEHsLmKWOGtfwD2AY
 {
-    "lastname": "Smith",
-    "email": "DEZCFERVFERvdvedfvfe32435R34@test.com",
-    "password": "Azerty12345!"
+    "player": {
+        "id": "af9141e8-0efb-4119-b4b8-e365c6a432aa"
+    }
 }
-###
-POST http://localhost:4000/login
+
+GET http://localhost:3000/game/join
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6ImU5NmRkNDIwLWIwOWItNDNkMi1hZjRkLWQ3MmFhYjM0M2E0OSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzMxOTY3MX0.lAIH6crEUOsNoVvtrUbbtWsNd0CEHsLmKWOGtfwD2AY
 
-{
-    "email": "DEZCFERVFERvdvedfvfe32435R34@test.com",
-    "password": "Azerty12345!"
-}
-### GET users list not connected
-GET http://localhost:4000/users
-### GET users list connected (invalid type)
-GET http://localhost:4000/users
-Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmZjIzMDU5ZC04YjAxLTQ3YmYtYjAxOC1hM2RlZGZmMThmMGUiLCJmdWxsTmFtZSI6IkRvZSBDb3VjMTIzb3UhIiwiaWF0IjoxNzExMTE4NjU2fQ.RSjGR55nTt3nR2wqiMtPbW86aLFM7v0ND5y2K2u-s8I
-### GET users list connected (invalid token)
-GET http://localhost:4000/users
-Authorization: Bearer eyJhbGciOifezferferJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJmZjIzMDU5ZC04YjAxLTQ3YmYtYjAxOC1hM2RlZGZmMThmMGUiLCJmdWxsTmFtZSI6IkRvZSBDb3VjMTIzb3UhIiwiaWF0IjoxNzExMTE4NjU2fQ.RSjGR55nTt3nR2wqiMtPbW86aLFM7v0ND5y2K2u-s8I
-### GET users list connected (Forbidden: user is not admin) (update token from login)
-GET http://localhost:4000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiYThlYWIxMC02MDlhLTQ2OTQtYTRkYS0xYTFjMTA3NTM5MzIiLCJmdWxsTmFtZSI6IlNtaXRoIG51bGwiLCJpYXQiOjE3MTExMTk4NzZ9.cXzaPQYQYeYQ2mMZGOSnNT_qG4KU2vE5dqZM324ZsAU
-### PATCH user role to admin (update token from login)
-PATCH http://localhost:4000/users/ba8eab10-609a-4694-a4da-1a1c10753932
+POST http://localhost:3000/game/join/33685
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiYThlYWIxMC02MDlhLTQ2OTQtYTRkYS0xYTFjMTA3NTM5MzIiLCJmdWxsTmFtZSI6IlNtaXRoIG51bGwiLCJpYXQiOjE3MTExMTk4NzZ9.cXzaPQYQYeYQ2mMZGOSnNT_qG4KU2vE5dqZM324ZsAU
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6ImU5NmRkNDIwLWIwOWItNDNkMi1hZjRkLWQ3MmFhYjM0M2E0OSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzMxOTY3MX0.lAIH6crEUOsNoVvtrUbbtWsNd0CEHsLmKWOGtfwD2AY
 {
-    "role": "admin"
+    "player": {
+        "id": "3b5a3ee4-bf25-4a58-a136-5e61998e0175"
+    }
 }
-### GET users list connected (update token from login)
-GET http://localhost:4000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJiYThlYWIxMC02MDlhLTQ2OTQtYTRkYS0xYTFjMTA3NTM5MzIiLCJmdWxsTmFtZSI6IlNtaXRoIG51bGwiLCJpYXQiOjE3MTExMTk4NzZ9.cXzaPQYQYeYQ2mMZGOSnNT_qG4KU2vE5dqZM324ZsAU
+
+POST http://localhost:3000/game/play/33685
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJRCI6ImU5NmRkNDIwLWIwOWItNDNkMi1hZjRkLWQ3MmFhYjM0M2E0OSIsImZ1bGxOYW1lIjoidW5kZWZpbmVkIHVuZGVmaW5lZCIsImlhdCI6MTcxNzMxOTY3MX0.lAIH6crEUOsNoVvtrUbbtWsNd0CEHsLmKWOGtfwD2AY
+{
+    "player": {
+        "id": "af9141e8-0efb-4119-b4b8-e365c6a432aa"
+    },
+    "row": 0,
+    "col": 0
+}
+
