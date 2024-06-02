@@ -1,2 +1,3 @@
-# Morpion
-Projet scolaire création d'une API pour un jeu au tour par tour
+J'ai travaillé seul sur ce projet.
+
+Je n'arrivais pas 
